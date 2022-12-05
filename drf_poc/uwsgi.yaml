@@ -1,0 +1,14 @@
+uwsgi:
+  http-socket: 192.168.56.101:8082
+  chdir: /media/sf_WorkSpace/drf_poc
+  module: drf_poc.wsgi:application
+  processes: 4
+  listen : 20
+  daemonize: /tmp/uwsgi.log
+  pidfile: /tmp/uwsgi.pid
+  master: true
+  disable-logging : true
+  stats: /tmp/uwsgi.socket
+  enable-threads: true
+  buffer-size: 32768
+
